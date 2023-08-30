@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:telus_character_quiz/Screens/Home/home_screen.dart';
-import 'package:telus_character_quiz/Screens/Home/nav_state.dart';
-
+import 'package:telus_character_quiz/screens/Home/home_screen.dart';
 import 'package:telus_character_quiz/shared/routes.dart';
 import 'package:telus_character_quiz/shared/theme.dart';
+import 'package:telus_character_quiz/state/app_state.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +16,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => NavState(),
+      create: (_) => AppState(),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: appTheme,
         initialRoute: '/',
         routes: appRoutes,
-        home: const BaseScreen(),
+        home: const HomeScreen(),
       ),
     );
   }

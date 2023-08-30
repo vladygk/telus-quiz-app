@@ -1,15 +1,24 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:telus_character_quiz/Screens/Home/nav_state.dart';
-import 'package:telus_character_quiz/shared/routes.dart';
 import 'package:telus_character_quiz/shared/theme.dart';
+import 'package:telus_character_quiz/state/app_state.dart';
+import 'pages/about_page.dart';
+import 'pages/home_page.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class BaseScreen extends StatelessWidget {
-  const BaseScreen({super.key});
+final List<Widget> navPages = [
+  HomePage(),
+  AboutPage(),
+  HomePage(),
+];
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var state = Provider.of<NavState>(context);
+    var state = Provider.of<AppState>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +36,7 @@ class BaseScreen extends StatelessWidget {
             style: TextStyle(fontSize: 21),
           ))),
       body: navPages[state.currentNavIndex],
-      bottomNavigationBar: NavBar(),
+      bottomNavigationBar: const NavBar(),
     );
   }
 }
@@ -37,72 +46,37 @@ class NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var state = Provider.of<NavState>(context);
-    return BottomNavigationBar(
-      currentIndex: state.currentNavIndex,
-      onTap: (index) {
-        state.currentNavIndex = index;
-      },
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
+    var state = Provider.of<AppState>(context);
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          top: BorderSide(
+            color: green,
+            width: 3,
+          ),
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.explore),
-          label: 'Explore',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Profile',
-        ),
-      ],
+      ),
+      child: BottomNavigationBar(
+        backgroundColor: purple,
+        currentIndex: state.currentNavIndex,
+        onTap: (index) {
+          state.currentNavIndex = index;
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.house, color: green),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.photoFilm, color: green),
+            label: 'Gallery',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.bookAtlas, color: green),
+            label: 'About',
+          ),
+        ],
+      ),
     );
   }
 }
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Home page'),
-    );
-  }
-}
-
-
-
-//  Center(
-//           child: Container(
-//             decoration: BoxDecoration(
-//                 borderRadius: BorderRadius.circular(10.0), color: green),
-//             height: 100,
-//             width: 260,
-//             child: Column(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               crossAxisAlignment: CrossAxisAlignment.center,
-//               children: [
-//                 const Text(
-//                   'Welcome to the Telus quiz',
-//                   style: TextStyle(fontSize: 20),
-//                 ),
-//                 Padding(
-//                   padding: const EdgeInsets.only(
-//                     top: 10,
-//                   ),
-//                   child: ElevatedButton(
-//                     child: const Text(
-//                       'Start  quiz!',
-//                       style: TextStyle(fontWeight: FontWeight.bold),
-//                     ),
-//                     onPressed: () {},
-//                   ),
-//                 )
-//               ],
-//             ),
-//           ),
-//         ),
-//         //bottomNavigationBar:
-//       ),

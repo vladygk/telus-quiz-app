@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NavState with ChangeNotifier {
+class AppState with ChangeNotifier {
   int _navIndex = 0;
 
   int get currentNavIndex => _navIndex;
