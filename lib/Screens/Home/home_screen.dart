@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:telus_character_quiz/shared/theme.dart';
@@ -8,9 +7,9 @@ import 'pages/home_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 final List<Widget> navPages = [
-  HomePage(),
-  AboutPage(),
-  HomePage(),
+  const HomePage(),
+  const AboutPage(),
+  const HomePage(),
 ];
 
 class HomeScreen extends StatelessWidget {
