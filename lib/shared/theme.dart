@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 var purple = const Color.fromRGBO(75, 40, 109, 1);
-var darkPurple = const Color.fromRGBO(75, 40, 109, 1.5);
+var darkPurple = const Color.fromRGBO(90, 50, 109, 1.5);
 var green = const Color.fromRGBO(102, 204, 0, 1);
 
 var appTheme = ThemeData(

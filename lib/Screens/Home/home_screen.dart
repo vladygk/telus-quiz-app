@@ -8,8 +8,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 final List<Widget> navPages = [
   const HomePage(),
-  const AboutPage(),
   const HomePage(),
+  const AboutPage(),
 ];
 
 class HomeScreen extends StatelessWidget {

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:telus_character_quiz/shared/theme.dart';
+import 'package:telus_character_quiz/state/app_state.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var state = Provider.of<AppState>(context);
     return Center(
       child: Center(
         child: Container(
@@ -30,7 +33,10 @@ class HomePage extends StatelessWidget {
                     'Start  quiz!',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    state.currentQuizProgress = 0;
+                    Navigator.pushNamed(context, '/quiz');
+                  },
                 ),
               )
             ],
