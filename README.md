@@ -1,16 +1,24 @@
-# telus_character_quiz
+# An Android mobile perosnality quiz app
 
-A new Flutter project.
+## back-end is provided by <a href="https://github.com/vladygk/quiz-app-api">this NestJS API</a>
 
-## Getting Started
+<p align="center">
+  <img src="https://static.wikia.nocookie.net/logo-timeline/images/c/cf/4B4A9751-D2BF-4A93-BDCC-CDCA5326B65F.png/revision/latest/scale-to-width-down/1124?cb=20210426191500" width="200" alt="Nest Logo" />
 
-This project is a starting point for a Flutter application.
+  <p align="center">Built with Flutter</p>
 
-A few resources to get you started if this is your first Flutter project:
+## Description
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To be added
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Running the app
+
+```bash
+# development
+$ flutter run
+
+```
+
+## License
+
+The app is [MIT licensed](LICENSE).

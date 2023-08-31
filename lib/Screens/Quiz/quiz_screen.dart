@@ -28,7 +28,7 @@ class QuizScreen extends StatelessWidget {
           controller: state.controller,
           itemBuilder: (BuildContext context, int index) {
             if (index == 2) {
-              return CongratsPage();
+              return const CongratsPage();
             }
 
             return QuestionPage(index: index);
