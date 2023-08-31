@@ -1,4 +1,4 @@
-# An Android mobile perosnality quiz app
+# An Android mobile personality quiz app
 
 ## back-end is provided by <a href="https://github.com/vladygk/quiz-app-api">this NestJS API</a>
 
