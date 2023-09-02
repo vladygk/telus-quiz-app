@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BottomModel {
+class BottomModal {
   static void showBottomModal(
       {required BuildContext context,
       required Color bg,

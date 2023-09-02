@@ -1,10 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:telus_character_quiz/shared/bottom-modal.dart';
 import 'package:telus_character_quiz/shared/theme.dart';
 import 'package:telus_character_quiz/state/app_state.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // Call your method or perform your action here
+      BottomModal.showBottomModal(
+          context: context,
+          bg: green,
+          title: 'Successfully logged in',
+          subtitle: "It's quiz time!",
+          icon: FontAwesomeIcons.check);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

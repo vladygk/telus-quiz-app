@@ -177,7 +177,7 @@ class _LoginPageState extends State<LoginPage> {
                           state.accessToken =
                               JwtTokenDto.fromJson(response.body).getPayload();
                         } else {
-                          BottomModel.showBottomModal(
+                          BottomModal.showBottomModal(
                               context: context,
                               bg: Colors.red.shade700,
                               title: 'Authentication error',
