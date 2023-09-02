@@ -32,4 +32,13 @@ class AppState with ChangeNotifier {
     _currentAnswerIndex = value;
     notifyListeners();
   }
+
+  String? _accessToken;
+
+  String? get accessToken => _accessToken;
+
+  set accessToken(String? value) {
+    _accessToken = value;
+    notifyListeners();
+  }
 }

@@ -9,20 +9,28 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var state = Provider.of<AppState>(context);
+
     return Center(
       child: Center(
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0), color: green),
-          height: 100,
-          width: 260,
+          height: 150,
+          width: 270,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
-                'Welcome to the Telus quiz',
-                style: TextStyle(fontSize: 20),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 0, horizontal: 5),
+                child: Text(
+                  'Welcome to the Telus quiz',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              Text(
+                state.accessToken?.split('@')[0] ?? "",
+                style: const TextStyle(fontSize: 20),
               ),
               Padding(
                 padding: const EdgeInsets.only(

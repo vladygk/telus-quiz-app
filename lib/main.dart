@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:telus_character_quiz/screens/Home/home_screen.dart';
 import 'package:telus_character_quiz/shared/routes.dart';
 import 'package:telus_character_quiz/shared/theme.dart';
 import 'package:telus_character_quiz/state/app_state.dart';
 
-void main() {
+Future main() async {
   runApp(const MyApp());
+  await dotenv.load(fileName: ".env");
 }
 
 class MyApp extends StatelessWidget {
