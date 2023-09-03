@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:telus_character_quiz/Screens/Home/logout.dart';
 import 'package:telus_character_quiz/Screens/Home/nav-bars/authenticated_navbar.dart';
 import 'package:telus_character_quiz/Screens/Home/nav-bars/guest_navbar.dart';
 import 'package:telus_character_quiz/Screens/Home/pages/login_page.dart';
@@ -12,6 +13,7 @@ final List<Widget> navPagesAuthenticated = [
   const HomePage(),
   const HomePage(), // to be change dto gallery
   const AboutPage(),
+  const Logout(),
 ];
 
 final List<Widget> navPagesGuest = [

@@ -10,7 +10,7 @@ class JwtTokenDto {
   factory JwtTokenDto.fromJson(String requestBody) {
     Map<String, dynamic> jsonObject = json.decode(requestBody);
 
-    return JwtTokenDto(jsonObject["access_token"] as String ?? "");
+    return JwtTokenDto((jsonObject["access_token"] ?? "") as String);
   }
 
   String getPayload() {

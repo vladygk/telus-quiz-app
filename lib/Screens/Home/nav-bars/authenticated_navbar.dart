@@ -38,6 +38,10 @@ class NavBarAuthenticated extends StatelessWidget {
             icon: Icon(FontAwesomeIcons.bookAtlas, color: green),
             label: 'About',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.rightFromBracket, color: green),
+            label: 'Logout',
+          ),
         ],
       ),
     );

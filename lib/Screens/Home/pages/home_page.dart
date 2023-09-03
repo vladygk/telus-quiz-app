@@ -18,13 +18,17 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // Call your method or perform your action here
-      BottomModal.showBottomModal(
-          context: context,
-          bg: green,
-          title: 'Successfully logged in',
-          subtitle: "It's quiz time!",
-          icon: FontAwesomeIcons.check);
+      var state = Provider.of<AppState>(context, listen: false);
+
+      if (state.hasLogged) {
+        state.hasLogged = false;
+        BottomModal.showBottomModal(
+            context: context,
+            bg: green,
+            title: 'Successfully logged in',
+            subtitle: "Welcome back, ${state.accessToken?.split('@')[0] ?? ''}",
+            icon: FontAwesomeIcons.check);
+      }
     });
   }
 

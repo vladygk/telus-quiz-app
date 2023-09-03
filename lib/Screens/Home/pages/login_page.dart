@@ -37,6 +37,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
+    var state = Provider.of<AppState>(context, listen: false);
+    state.hasLogged = true;
     _controllerEmail.addListener(_onTextChanged);
     _controllerPassword.addListener(_onTextChanged);
   }
@@ -204,6 +206,7 @@ class _LoginPageState extends State<LoginPage> {
   void dispose() {
     _controllerEmail.dispose();
     _controllerPassword.dispose();
+
     super.dispose();
   }
 }

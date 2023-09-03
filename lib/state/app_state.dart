@@ -34,7 +34,7 @@ class AppState with ChangeNotifier {
   }
 
   String? _accessToken;
-
+  bool hasLogged = false;
   String? get accessToken => _accessToken;
 
   set accessToken(String? value) {
