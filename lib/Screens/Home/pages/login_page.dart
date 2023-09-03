@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 40, horizontal: 0),
             child: Text(
-              'Login with email',
+              'Login',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 30,
@@ -189,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
                       }
                     },
                     child: const Text(
-                      "Register",
+                      "Login",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

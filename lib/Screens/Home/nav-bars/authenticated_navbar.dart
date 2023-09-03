@@ -21,6 +21,8 @@ class NavBarAuthenticated extends StatelessWidget {
       ),
       child: BottomNavigationBar(
         backgroundColor: purple,
+        selectedItemColor: green,
+        unselectedItemColor: Colors.transparent,
         currentIndex: state.currentNavIndex,
         onTap: (index) {
           state.currentNavIndex = index;
