@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:telus_character_quiz/shared/bottom-modal.dart';
 import 'package:telus_character_quiz/shared/theme.dart';
 import 'package:telus_character_quiz/state/app_state.dart';
+import 'package:telus_character_quiz/state/quiz_state.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,7 +36,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var state = Provider.of<AppState>(context);
-
+    var quizState = Provider.of<QuizState>(context);
     return Center(
       child: Center(
         child: Container(
@@ -69,6 +70,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   onPressed: () {
                     state.currentQuizProgress = 0;
+                    quizState.questionIndex = 1;
                     Navigator.pushNamed(context, '/quiz');
                   },
                 ),

@@ -5,6 +5,8 @@ import 'package:telus_character_quiz/screens/Home/home_screen.dart';
 import 'package:telus_character_quiz/shared/routes.dart';
 import 'package:telus_character_quiz/shared/theme.dart';
 import 'package:telus_character_quiz/state/app_state.dart';
+import 'package:telus_character_quiz/state/quiz_state.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 Future main() async {
   runApp(const MyApp());
@@ -19,12 +21,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => AppState(),
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: appTheme,
-        initialRoute: '/',
-        routes: appRoutes,
-        home: const HomeScreen(),
+      child: ChangeNotifierProvider(
+        create: (_) => QuizState(),
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: appTheme,
+          initialRoute: '/',
+          routes: appRoutes,
+          home: const HomeScreen(),
+          builder: EasyLoading.init(),
+        ),
       ),
     );
   }

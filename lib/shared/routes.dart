@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:telus_character_quiz/Screens/Home/pages/login_page.dart';
-import 'package:telus_character_quiz/Screens/Home/home_screen.dart';
+import 'package:telus_character_quiz/screens/Home/pages/login_page.dart';
+import 'package:telus_character_quiz/screens/Home/home_screen.dart';
 import 'package:telus_character_quiz/screens/Quiz/quiz_screen.dart';
 import 'package:telus_character_quiz/screens/Result/result_screen.dart';
 

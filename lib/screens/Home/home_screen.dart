@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:telus_character_quiz/Screens/Home/logout_page.dart';
-import 'package:telus_character_quiz/Screens/Home/nav-bars/authenticated_navbar.dart';
-import 'package:telus_character_quiz/Screens/Home/nav-bars/guest_navbar.dart';
-import 'package:telus_character_quiz/Screens/Home/pages/login_page.dart';
-import 'package:telus_character_quiz/Screens/Home/pages/register_page.dart';
+import 'package:telus_character_quiz/screens/Home/logout_page.dart';
+import 'package:telus_character_quiz/screens/Home/nav-bars/authenticated_navbar.dart';
+import 'package:telus_character_quiz/screens/Home/nav-bars/guest_navbar.dart';
+import 'package:telus_character_quiz/screens/Home/pages/login_page.dart';
+import 'package:telus_character_quiz/screens/Home/pages/register_page.dart';
 import 'package:telus_character_quiz/state/app_state.dart';
 import 'pages/about_page.dart';
 import 'pages/home_page.dart';
@@ -30,9 +30,6 @@ class HomeScreen extends StatelessWidget {
 
     bool isAuthenticated = !(state.accessToken == null);
 
-    // if (state.accessToken == null) {
-    //   Navigator.pushNamed(context, '/login');
-    // }
     return Scaffold(
       appBar: AppBar(
           leading: const Padding(

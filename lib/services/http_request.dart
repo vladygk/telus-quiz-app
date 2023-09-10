@@ -12,7 +12,22 @@ class Request {
     baseUrl = 'http://$ip:5050/';
   }
 
-  dynamic Get() {}
+  Future<String> Get({int id = -1}) async {
+    final url = '$baseUrl$route';
+    http.Response response;
+    if (id >= 0) {
+      response =
+          await http.get(Uri.parse('$url/$id'), headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      });
+    } else {
+      response = await http.get(Uri.parse(url), headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      });
+    }
+
+    return response.body;
+  }
 
   Future<http.Response> Post(JsonObject body) async {
     final url = '$baseUrl$route';

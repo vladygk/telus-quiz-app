@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:telus_character_quiz/screens/Quiz/pages/congrats_page.dart';
@@ -27,7 +28,9 @@ class QuizScreen extends StatelessWidget {
           itemCount: 3,
           controller: state.controller,
           itemBuilder: (BuildContext context, int index) {
-            if (index == 2) {
+            print('indeeeeex: $index');
+            if (index >= 2) {
+              EasyLoading.dismiss();
               return const CongratsPage();
             }
 

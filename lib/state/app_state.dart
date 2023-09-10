@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppState with ChangeNotifier {
   int _navIndex = 0;
-  final int waitTime = 500;
+  final int waitTime = 450;
   int get currentNavIndex => _navIndex;
 
   set currentNavIndex(int value) {
@@ -14,11 +14,11 @@ class AppState with ChangeNotifier {
 
   void nextPage() async {
     currentQuizProgress++;
+
     await controller.nextPage(
       duration: Duration(milliseconds: waitTime),
       curve: Curves.easeInOut,
     );
-
     currentAnswerIndex = -1;
     notifyListeners();
   }
